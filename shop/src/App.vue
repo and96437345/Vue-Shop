@@ -1,5 +1,5 @@
 <script setup>
-//import Card from './components/Card.vue'
+  import Catalog from './components/Catalog.vue'
 </script>
 
 <template>
@@ -63,9 +63,13 @@
             </div>
           </div>
         </div>
-                
+        <Catalog/>     
       </div>
+
+      
     </main>
+
+    
 
   </div>
 </template>
