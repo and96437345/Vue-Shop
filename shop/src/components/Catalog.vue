@@ -7,15 +7,19 @@
         <div class="catalog__header">
             <div class="catalog__name">Все кроссовки</div>
             <div class="catalog__find">
-                <div class="catalog__find-icon">
+                <button class="catalog__find-btn">
                     <svg class="find__icon">
                         <use href="../assets/sprite.svg#icon-find"></use>
                     </svg>
-                </div>
+                </button>
                 <input type="text" class="catalog__find-input" placeholder="Поиск...">
             </div>
         </div>
         <div class="catalog__card-row">
+            <CatalogItem/>
+            <CatalogItem/>
+            <CatalogItem/>
+            <CatalogItem/>
             <CatalogItem/>
             <CatalogItem/>
             <CatalogItem/>
@@ -41,16 +45,19 @@
     .catalog__find {
         width: 250px;
         height: 45px;
-        padding: 0 18px 0 18px;
+        padding: 0 0 0 18px;
         box-sizing: border-box;
         color: #f3f3f3;
         border-radius: 10px;
         border: 1px solid #F3F3F3;
         display: flex;
     }
-    .catalog__find-icon {
+    .catalog__find-btn {
         display: flex;
         align-items: center;
+        background-color: #fff;
+        border: none;
+        cursor: pointer;
     }
     .find__icon {
         width: 18px;
@@ -61,6 +68,10 @@
     }
     .catalog__find-input {
         border: none;
+    }
+    .catalog__find-input:focus {
+        outline: 0;
+        outline-offset: 0;
     }
     .catalog__find-input::placeholder {
         color: #C4C4C4;

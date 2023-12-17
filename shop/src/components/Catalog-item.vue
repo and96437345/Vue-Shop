@@ -14,17 +14,17 @@
                     <div class="catalog-item__priceTitle">Цена:</div>
                     <div class="catalog-item__priceValue">12 999 руб.</div>
                 </div>
-                <button class="catalog-item__button">
+                <button class="catalog-item__button btn">
                     <svg class="check-icon">
                         <use href="../assets/sprite.svg#icon-plus"></use>
                     </svg>
                 </button>
             </div>
-            <div class="catalog-item__fav">
+            <button class="catalog-item__fav btn">
                 <svg class="catalog-item__icon">
                     <use href="../assets/sprite.svg#icon-red-heart"></use>
                 </svg>
-            </div>
+            </button>
         </div>
     </div>
 </template>
@@ -57,6 +57,13 @@
     }
     .catalog-item__title {
         margin: 14px auto;
+        color: #000;
+        font-family: Inter;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+
     }
     .catalog-item__priceRow {
         display: flex;
@@ -92,6 +99,9 @@
         top: 29px;
         width: 32px;
         height: 32px;
+        border-radius: 7px;
+        background-color: #fef0f0;
+        border: none;
     }
     .catalog-item__icon {
         position: absolute;
@@ -106,5 +116,8 @@
         width: 12px;
         height: 12px;
         fill: #d3d3d3;
+    }
+    .btn {
+        cursor: pointer;
     }
 </style>
