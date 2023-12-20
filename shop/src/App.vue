@@ -1,7 +1,8 @@
 <script setup>
-  import Header from './components/Header.vue';
-  import Banners from './components/Banners.vue';
-  import Catalog from './components/Catalog.vue';
+import Header from './components/Header.vue'
+import Banners from './components/Banners.vue'
+import Catalog from './components/Catalog.vue'
+import ProductList from './components/ProductList.vue'
 </script>
 
 <template>
@@ -9,7 +10,8 @@
     <div class="container">
       <Header />
       <Banners />
-      <Catalog />
+      <ProductList />
+      <!-- <Catalog /> -->
     </div>
   </div>
 </template>
