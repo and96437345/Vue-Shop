@@ -39,9 +39,7 @@ export default {
       </div>
     </div>
     <div class="catalog__card-row">
-      <div v-for="product in products" :key="product" class="catalog__items">
-        <CatalogItem :title="product.title" />
-      </div>
+      <CatalogItem v-for="product in products" :key="product" :image="product.image" :title="product.title" :price="product.price" :description="product.description" :rating="product.rating.count"/>
     </div>
   </div>
 </template>

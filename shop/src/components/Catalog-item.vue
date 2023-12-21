@@ -1,6 +1,10 @@
 <script setup>
 defineProps({
-  title: String
+  title: String,
+  price: String,
+  image: String,
+  description: String,
+  rating: String
 })
 </script>
 
@@ -8,13 +12,15 @@ defineProps({
   <div class="catalog-item">
     <div class="catalog-item__container">
       <div class="catalog-item__image">
-        <img alt="" />
+        <img :src="image" alt="">
       </div>
       <div class="catalog-item__title">{{ title }}</div>
+      <div class="catalog-item__desc">{{ description }}</div>
+      <div class="catalog-item__rating">Купили: {{ rating }} шт.</div>
       <div class="catalog-item__priceRow">
         <div class="catalog-item__price">
           <div class="catalog-item__priceTitle">Цена:</div>
-          <div class="catalog-item__priceValue">руб.</div>
+          <div class="catalog-item__priceValue">{{ price }} руб.</div>
         </div>
         <button class="catalog-item__button btn">
           <svg class="check-icon">
@@ -44,6 +50,9 @@ defineProps({
 }
 .catalog-item__container {
   position: relative;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
   padding: 22px 30px 32px 30px;
   box-sizing: border-box;
   border-radius: 40px;
@@ -58,7 +67,7 @@ defineProps({
   display: block;
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
   object-position: center;
 }
 .catalog-item__title {
@@ -70,9 +79,23 @@ defineProps({
   font-weight: 400;
   line-height: normal;
 }
+.catalog-item__desc {
+  font-size: 12px;
+  font-family: Inter;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-bottom: 10px;
+}
+.catalog-item__rating {
+  font-size: 12px;
+  font-family: Inter;
+  margin-bottom: 10px;
+}
 .catalog-item__priceRow {
   display: flex;
   justify-content: space-between;
+  margin-top: auto;
 }
 .catalog-item__button {
   border: none;
