@@ -56,9 +56,15 @@ defineProps({
   padding: 22px 30px 32px 30px;
   box-sizing: border-box;
   border-radius: 40px;
-  border: 1px solid #f8f8f8;
+  border: 1px solid #f3f3f3;
   background: #fff;
+  transition: .3s;
+}
+
+.catalog-item__container:hover {
+  border: 1px solid #f8f8f8;
   box-shadow: 0px 14px 30px 0px rgba(0, 0, 0, 0.05);
+  margin-top: -10px;
 }
 .catalog-item__image {
   height: 112px;
