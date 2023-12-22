@@ -3,11 +3,28 @@ import Header from './components/Header.vue'
 import Banners from './components/Banners.vue'
 import Catalog from './components/Catalog.vue'
 import ProductList from './components/ProductList.vue'
+
+import axios from 'axios';
+
+// export default {
+//   name: "get-request",
+//   data() {
+//     return {
+//       info: null
+//     };
+//   },
+  // created() {
+  //   axios.get("https://api.coindesk.com/v1/bpi/currentprice.json")
+  //   .then(response => (this.info = response.data));
+  // }
+// };
 </script>
 
 <template>
+    
   <div class="wrapper">
     <div class="container">
+      <!-- <div class="card-body">Курс{{ }}</div> -->
       <Header />
       <Banners />
       <ProductList />
