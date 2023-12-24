@@ -1,10 +1,11 @@
 <script setup>
 defineProps({
   title: String,
-  price: String,
+  price: Number,
   image: String,
   description: String,
-  rating: String
+  rating: Number,
+  usd: Number
 })
 </script>
 
@@ -20,7 +21,7 @@ defineProps({
       <div class="catalog-item__priceRow">
         <div class="catalog-item__price">
           <div class="catalog-item__priceTitle">Цена:</div>
-          <div class="catalog-item__priceValue">{{ price }} руб.</div>
+          <div class="catalog-item__priceValue">{{ (price*usd).toFixed(2) }} руб.</div>
         </div>
         <button class="catalog-item__button btn">
           <svg class="check-icon">

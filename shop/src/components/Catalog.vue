@@ -16,9 +16,6 @@ import CatalogItem from './Catalog-item.vue'
       </div>
     </div>
     <div class="catalog__card-row">
-      <!-- <div v-for="product in products" :key="product.id" class="catalog__items">
-        <CatalogItem />
-      </div> -->
     </div>
   </div>
 </template>
