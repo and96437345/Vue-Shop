@@ -9,7 +9,7 @@ import FlyBasket from './components/FlyBasket.vue'
 <template>
   <div class="wrapper">
     <div class="container">
-      <FlyBasket />
+      <!-- <FlyBasket /> -->
       <Header />
       <Banners />
       <ProductList />
