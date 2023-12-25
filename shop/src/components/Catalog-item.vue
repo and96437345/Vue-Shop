@@ -1,3 +1,9 @@
+<script>
+import productMixin from './productMixin'
+export default {
+  mixins: [productMixin]
+}
+</script>
 <script setup>
 defineProps({
   title: String,
@@ -5,7 +11,8 @@ defineProps({
   image: String,
   description: String,
   rating: Number,
-  usd: Number
+  usd: Number,
+  product: Object
 })
 </script>
 
@@ -13,7 +20,7 @@ defineProps({
   <div class="catalog-item">
     <div class="catalog-item__container">
       <div class="catalog-item__image">
-        <img :src="image" alt="">
+        <img :src="image" alt="" />
       </div>
       <div class="catalog-item__title">{{ title }}</div>
       <div class="catalog-item__desc">{{ description }}</div>
@@ -21,11 +28,14 @@ defineProps({
       <div class="catalog-item__priceRow">
         <div class="catalog-item__price">
           <div class="catalog-item__priceTitle">Цена:</div>
-          <div class="catalog-item__priceValue">{{ (price*usd).toFixed(2) }} руб.</div>
+          <div class="catalog-item__priceValue">{{ (price * usd).toFixed(2) }} руб.</div>
         </div>
-        <button class="catalog-item__button btn">
-          <svg class="check-icon">
+        <button class="catalog-item__button btn" @click="addToCart(product)">
+          <svg v-if="!isInCart(product)" class="check-icon">
             <use href="../assets/sprite.svg#icon-plus"></use>
+          </svg>
+          <svg v-else class="check-icon">
+            <use href="../assets/sprite.svg#icon-check"></use>
           </svg>
         </button>
       </div>
@@ -59,13 +69,13 @@ defineProps({
   border-radius: 40px;
   border: 1px solid #f3f3f3;
   background: #fff;
-  transition: .3s;
+  transition: 0.3s;
 }
 
 .catalog-item__container:hover {
   border: 1px solid #f8f8f8;
   box-shadow: 0px 14px 30px 0px rgba(0, 0, 0, 0.05);
-  margin-top: -10px;
+  transform: translateY(-10px);
 }
 .catalog-item__image {
   height: 112px;

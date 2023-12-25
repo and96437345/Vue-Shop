@@ -1,30 +1,10 @@
 <script>
+import productMixin from './productMixin'
 import CatalogItem from './Catalog-item.vue'
-import ProductList from './ProductList.vue'
 export default {
-  data() {
-    return {
-      products: []
-    }
-  },
-  mounted() {
-    this.fetchProduct()
-  },
-  methods: {
-    async fetchProduct() {
-      try {
-        const responseCurrency = await this.$axios.get('https://www.cbr-xml-daily.ru/daily_json.js')
-        this.usd = responseCurrency.data.Valute.USD.Value
-        const response = await this.$axios.get('https://fakestoreapi.com/products')
-        this.products = response.data
-        console.log(this.usd)
-        console.log(this.products)
-        
-      } catch (error) {}
-    }
-  },
+  mixins: [productMixin],
   components: {
-    CatalogItem,
+    CatalogItem
   }
 }
 </script>
@@ -43,7 +23,17 @@ export default {
       </div>
     </div>
     <div class="catalog__card-row">
-      <CatalogItem v-for="product in products" :key="product" :image="product.image" :title="product.title" :usd="usd" :price="product.price" :description="product.description" :rating="product.rating.count"/>
+      <CatalogItem
+        v-for="product in products"
+        :key="product"
+        :image="product.image"
+        :title="product.title"
+        :usd="usd"
+        :price="product.price"
+        :description="product.description"
+        :rating="product.rating.count"
+        :product="product"
+      />
     </div>
   </div>
 </template>

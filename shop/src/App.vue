@@ -2,14 +2,14 @@
 import Header from './components/Header.vue'
 import Banners from './components/Banners.vue'
 import ProductList from './components/ProductList.vue'
-import axios from 'axios';
-
+import axios from 'axios'
+import FlyBasket from './components/FlyBasket.vue'
 </script>
 
 <template>
-    
   <div class="wrapper">
     <div class="container">
+      <FlyBasket />
       <Header />
       <Banners />
       <ProductList />
