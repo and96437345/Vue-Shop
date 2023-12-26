@@ -1,5 +1,6 @@
-<script>
+<script setup>
 
+  const emit = defineEmits(['openFlyBasket']);
 </script>
 
 <template>
@@ -17,7 +18,7 @@
           <div class="header__menu menu">
             <nav class="menu__nav">
               <ul class="menu__list">
-                <li class="menu__item">
+                <li @click="() => emit('openFlyBasket')" class="menu__item">
                   <a href="" class="menu__link">
                     <svg class="menu__icon menu__icon--cart">
                       <use href="../assets/sprite.svg#icon-cart"></use>

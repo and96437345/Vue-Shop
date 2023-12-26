@@ -1,4 +1,8 @@
-<script></script>
+<script setup>
+import { inject } from 'vue';
+
+const { closeFlyBasket } = inject('cartActions')
+</script>
 
 <template>
   <div class="flybasket">
@@ -8,7 +12,7 @@
       <div class="flybasket__body"></div>
       <div class="flybasket__footer">
         <ul class="flybasket__list">
-          <li class="flybasket__option">
+          <li @click="closeFlyBasket" class="flybasket__option">
             <div class="flybasket__option-label">Итого:</div>
             <div class="flybasket__option-value">21 498 руб.</div>
           </li>

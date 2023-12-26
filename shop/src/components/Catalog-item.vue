@@ -34,7 +34,7 @@ defineProps({
           <svg v-if="!isInCart(product)" class="check-icon">
             <use href="../assets/sprite.svg#icon-plus"></use>
           </svg>
-          <svg v-else class="check-icon">
+          <svg v-else class="check-icon active">
             <use href="../assets/sprite.svg#icon-check"></use>
           </svg>
         </button>
@@ -162,6 +162,13 @@ defineProps({
   height: 12px;
   fill: #d3d3d3;
 }
+.active {
+  color: #fff;
+  padding: 12px;
+  border-radius: 8px;
+  background: linear-gradient(180deg, #89F09C 0%, #3CC755 100%);
+}
+
 .btn {
   cursor: pointer;
 }
