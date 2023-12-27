@@ -4,7 +4,7 @@ import Banners from './components/Banners.vue'
 import ProductList from './components/ProductList.vue'
 import axios from 'axios'
 import FlyBasket from './components/FlyBasket.vue'
-import {ref, provide} from 'vue'
+import { ref, provide } from 'vue'
 
 const flyBasketOpen = ref(false)
 
@@ -12,6 +12,7 @@ const openFlyBasket = () => {
   flyBasketOpen.value = true
 }
 const closeFlyBasket = () => {
+  console.log('q')
   flyBasketOpen.value = false
 }
 provide('cartActions', {
@@ -23,9 +24,9 @@ provide('cartActions', {
 <template>
   <div class="wrapper">
     <div class="container">
-      <FlyBasket v-if="flyBasketOpen"/>
-      <Header @open-fly-basket="openFlyBasket"/>
-      <Banners />
+      <FlyBasket v-if="flyBasketOpen" />
+      <Header @open-fly-basket="openFlyBasket" />
+      <Banners v-if="!flyBasketOpen" />
       <ProductList />
       <!-- <Catalog /> -->
     </div>

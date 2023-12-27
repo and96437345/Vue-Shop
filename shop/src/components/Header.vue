@@ -1,49 +1,48 @@
 <script setup>
-
-  const emit = defineEmits(['openFlyBasket']);
+const emit = defineEmits(['openFlyBasket'])
 </script>
 
 <template>
-    <header class="header">
-        <div class="header__row">
-          <div class="header__logo logo">
-            <div class="logo__image">
-              <img src="../assets/logo.svg" alt="" />
-            </div>
-            <div class="logo__right">
-              <div class="logo__name">REACT SNEAKERS</div>
-              <div class="logo__desc">Магазин лучших кроссовок</div>
-            </div>
-          </div>
-          <div class="header__menu menu">
-            <nav class="menu__nav">
-              <ul class="menu__list">
-                <li @click="() => emit('openFlyBasket')" class="menu__item">
-                  <a href="" class="menu__link">
-                    <svg class="menu__icon menu__icon--cart">
-                      <use href="../assets/sprite.svg#icon-cart"></use>
-                    </svg>
-                    1205 руб.
-                  </a>
-                </li>
-                <li class="menu__item">
-                  <a href="" class="menu__link">
-                    <svg class="menu__icon"><use href="../assets/sprite.svg#icon-fav"></use></svg>
-                    Закладки
-                  </a>
-                </li>
-                <li class="menu__item">
-                  <a href="" class="menu__link">
-                    <svg class="menu__icon"><use href="../assets/sprite.svg#icon-lk"></use></svg>
-                    Профиль
-                  </a>
-                </li>
-              </ul>
-            </nav>
-            <div class="element"></div>
-          </div>
+  <header class="header">
+    <div class="header__row">
+      <div class="header__logo logo">
+        <div class="logo__image">
+          <img src="../assets/logo.svg" alt="" />
         </div>
-    </header>
+        <div class="logo__right">
+          <div class="logo__name">REACT SNEAKERS</div>
+          <div class="logo__desc">Магазин лучших кроссовок</div>
+        </div>
+      </div>
+      <div class="header__menu menu">
+        <nav class="menu__nav">
+          <ul class="menu__list">
+            <li @click="() => emit('openFlyBasket')" class="menu__item">
+              <a class="menu__link">
+                <svg class="menu__icon menu__icon--cart">
+                  <use href="../assets/sprite.svg#icon-cart"></use>
+                </svg>
+                1205 руб.
+              </a>
+            </li>
+            <li class="menu__item">
+              <a href="" class="menu__link">
+                <svg class="menu__icon"><use href="../assets/sprite.svg#icon-fav"></use></svg>
+                Закладки
+              </a>
+            </li>
+            <li class="menu__item">
+              <a href="" class="menu__link">
+                <svg class="menu__icon"><use href="../assets/sprite.svg#icon-lk"></use></svg>
+                Профиль
+              </a>
+            </li>
+          </ul>
+        </nav>
+        <div class="element"></div>
+      </div>
+    </div>
+  </header>
 </template>
 
 <style>
@@ -104,7 +103,7 @@
   display: flex;
   align-items: center;
   text-decoration: none;
-  color: #5C5C5C;
+  color: #5c5c5c;
   font-family: Inter;
   font-size: 14px;
   font-style: normal;

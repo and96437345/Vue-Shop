@@ -19,6 +19,7 @@ export default {
         console.log(this.products)
       } catch (error) {}
     },
+    // Добавление товара в корзину
     addToCart(product) {
       if (!this.isInCart(product)) {
         this.cart.push(product)
@@ -34,6 +35,10 @@ export default {
       return this.cart.some(function (item) {
         return item.id === product.id
       })
+    },
+    toggleCart() {
+      this.showCart = !this.showCart
+      document.body.classList.toggle('is-hidden', this.showCart)
     }
   }
 }
